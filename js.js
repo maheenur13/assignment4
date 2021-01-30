@@ -53,7 +53,7 @@ function numberOfFirstClassTicket() {
 function payableAmount() {
     let getTotalPayableAmount = parseInt(document.getElementById('total').innerText);
     let displayTotalPayableAmount = document.getElementById('total-payable-amount');
-    displayTotalPayableAmount.innerText = `$ ` + getTotalPayableAmount;
+    displayTotalPayableAmount.innerText = `$ ` + getTotalPayableAmount + `(Including Tax)`;
 }
 
 function returnAndDepurture() {
