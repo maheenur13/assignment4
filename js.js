@@ -1,41 +1,59 @@
+//first class ticket plus button handler
 document.getElementById('first-class-increase').addEventListener('click', function() {
-    increaseInput('input-first-class');
-    TotalPriceCount('first-class-increase');
-    let currentSubtotal = subtotal('first-class-increase');
-    let currenttax = tax(currentSubtotal);
+        increaseInput('input-first-class');
+        TotalPriceCount('first-class-increase');
+        let currentSubtotal = subtotal('first-class-increase');
+        tax(currentSubtotal);
 
-})
+    })
+    //first class ticket minus button hanndler
 document.getElementById('first-class-decrease').addEventListener('click', function() {
-    let input = decreaseInput('input-first-class');
-    TotalPriceCount('first-class-decrease');
-    let currentSubtotal = subtotal('first-class-decrease');
-    tax(currentSubtotal);
-})
+        decreaseInput('input-first-class');
+        TotalPriceCount('first-class-decrease');
+        let currentSubtotal = subtotal('first-class-decrease');
+        tax(currentSubtotal);
+    })
+    //economy class ticket plus button handler  
 document.getElementById('economy-class-increase').addEventListener('click', function() {
-    increaseInput('input-economy-class');
-    let totalEconomyPriceCount = TotalPriceCount('economy-class-increase');
-    let currentSubtotal = subtotal('economy-class-increase');
-    let currenttax = tax(currentSubtotal);
+        increaseInput('input-economy-class');
+        TotalPriceCount('economy-class-increase');
+        let currentSubtotal = subtotal('economy-class-increase');
+        tax(currentSubtotal);
 
-})
+    })
+    //economy class ticket minus button handler
 document.getElementById('economy-class-decrease').addEventListener('click', function() {
-    let input = decreaseInput('input-economy-class');
-    TotalPriceCount('economy-class-decrease');
-    let currentSubtotal = subtotal('economy-class-decrease');
-    tax(currentSubtotal);
-})
+        decreaseInput('input-economy-class');
+        TotalPriceCount('economy-class-decrease');
+        let currentSubtotal = subtotal('economy-class-decrease');
+        tax(currentSubtotal);
+    })
+    //book now button handler
 document.getElementById('book-now').addEventListener('click', function() {
     noneAndBlockDisplay();
     flyingform();
     returnAndDepurture();
+    numberOfFirstClassTicket();
+    numberOfEconomyClassTicket();
     payableAmount();
-
 })
+
+function numberOfEconomyClassTicket() {
+    let getNumberOfEconomyClassTicket = document.getElementById('input-economy-class').value;
+    let displayNumberOfEconomyClassTicket = document.getElementById('no-of-economy-class-ticket');
+    displayNumberOfEconomyClassTicket.innerText = getNumberOfEconomyClassTicket;
+}
+
+function numberOfFirstClassTicket() {
+    let getNumberOfFirstClassTicket = document.getElementById('input-first-class').value;
+    let displayNumberOfFirstClassTicket = document.getElementById('no-of-first-class-ticket');
+    displayNumberOfFirstClassTicket.innerText = getNumberOfFirstClassTicket
+}
 
 function payableAmount() {
     let getTotalPayableAmount = parseInt(document.getElementById('total').innerText);
     let displayTotalPayableAmount = document.getElementById('total-payable-amount');
-    displayTotalPayableAmount.innerText = getTotalPayableAmount;
+    displayTotalPayableAmount.innerText = `$ ` + getTotalPayableAmount;
 }
 
 function returnAndDepurture() {

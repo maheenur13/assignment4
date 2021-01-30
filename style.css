@@ -1,11 +1,3 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style-type: none;
-}
-
 body {
     font-family: 'Roboto', sans-serif;
     background: url("images/bg.png");
@@ -34,6 +26,8 @@ nav ul {
 }
 
 nav ul li a {
+    margin-right: 3px;
+    text-decoration: none;
     color: #fff;
     padding: 10px;
     text-transform: uppercase;
@@ -43,6 +37,7 @@ nav ul li a:hover,
 a.active {
     background-color: #3352F2;
     border-radius: 5px;
+    color: white;
 }
 
 .main-content {
@@ -72,18 +67,28 @@ a.active {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* border: 2px solid yellow; */
 }
 
 .inp-width {
-    min-width: 300px;
+    min-width: 250px;
 }
 
 .plus-minus-btn {
-    color: #3352F2;
-    font-size: 30px;
-    padding: 2px;
+    display: flex;
     margin-top: 10px;
-    word-spacing: 20px;
+    justify-content: center;
+    align-items: center;
+    color: #3352F2;
+    font-size: 25px;
+    /* padding: 2px; */
+}
+
+.input-button-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
 }
 
 .booking-form .calculations {
@@ -149,11 +154,20 @@ a.active {
 
 #after-book {
     display: none;
+    background-color: rgba(146, 146, 146, 0.678);
+    margin-top: 100px;
+    padding: 30px 0px 30px 30px;
+    /* text-align: center; */
+    border-radius: 20px;
+    line-height: 35px;
 }
 
 .design-all-plus-minus-button {
+    display: inline-block;
+    width: 28px;
+    text-align: center;
     background-color: #5c659259;
-    padding: 0px 5px;
+    /* padding: 0px 5px; */
     cursor: pointer;
     border-radius: 20%;
 }
@@ -161,4 +175,26 @@ a.active {
 .design-all-plus-minus-button:hover {
     background-color: #2b2e4259;
     transition: .2s;
+}
+
+.after-book h1 {
+    /* font-size: 0px; */
+    font-size: 2vw;
+    text-align: center;
+    color: rgb(179, 50, 11);
+}
+
+.after-book span {
+    font-size: 14px;
+    color: rgb(194, 25, 25);
+    /* font-size: 14px; */
+}
+
+.checkout-conntent {
+    margin-left: 40px;
+}
+
+.checkout-conntent h5 {
+    line-height: 35px;
+    font-size: 1.7vw;
 }
