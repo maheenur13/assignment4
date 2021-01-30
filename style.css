@@ -1,4 +1,4 @@
-`* {
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -134,9 +134,31 @@ a.active {
     color: #fff;
     font-weight: 500;
     background-color: #3352F2;
+    cursor: pointer;
+}
+
+.btn-style:hover {
+    background-color: #2e44b3;
+    transition: .2s;
 }
 
 .amount {
     display: flex;
     justify-content: space-between;
+}
+
+#after-book {
+    display: none;
+}
+
+.design-all-plus-minus-button {
+    background-color: #5c659259;
+    padding: 0px 5px;
+    cursor: pointer;
+    border-radius: 20%;
+}
+
+.design-all-plus-minus-button:hover {
+    background-color: #2b2e4259;
+    transition: .2s;
 }

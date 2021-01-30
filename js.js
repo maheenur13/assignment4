@@ -1,27 +1,27 @@
 document.getElementById('first-class-increase').addEventListener('click', function() {
-    increaseInput('input-one');
+    increaseInput('input-first-class');
     TotalPriceCount('first-class-increase');
     let currentSubtotal = subtotal('first-class-increase');
     let currenttax = tax(currentSubtotal);
 
 })
-document.getElementById('first-item-decrease').addEventListener('click', function() {
-    let input = decreaseInput('input-one');
-    TotalPriceCount('first-item-decrease');
-    let currentSubtotal = subtotal('first-item-decrease');
+document.getElementById('first-class-decrease').addEventListener('click', function() {
+    let input = decreaseInput('input-first-class');
+    TotalPriceCount('first-class-decrease');
+    let currentSubtotal = subtotal('first-class-decrease');
     tax(currentSubtotal);
 })
-document.getElementById('second-class-increase').addEventListener('click', function() {
-    increaseInput('input-two');
-    let totalEconomyPriceCount = TotalPriceCount('second-class-increase');
-    let currentSubtotal = subtotal('second-class-increase');
+document.getElementById('economy-class-increase').addEventListener('click', function() {
+    increaseInput('input-economy-class');
+    let totalEconomyPriceCount = TotalPriceCount('economy-class-increase');
+    let currentSubtotal = subtotal('economy-class-increase');
     let currenttax = tax(currentSubtotal);
 
 })
-document.getElementById('second-class-decrease').addEventListener('click', function() {
-    let input = decreaseInput('input-two');
-    TotalPriceCount('second-class-decrease');
-    let currentSubtotal = subtotal('second-class-decrease');
+document.getElementById('economy-class-decrease').addEventListener('click', function() {
+    let input = decreaseInput('input-economy-class');
+    TotalPriceCount('economy-class-decrease');
+    let currentSubtotal = subtotal('economy-class-decrease');
     tax(currentSubtotal);
 })
 document.getElementById('book-now').addEventListener('click', function() {
@@ -49,7 +49,6 @@ function returnAndDepurture() {
 
 function flyingform() {
     let getflyingFromAddress = document.getElementById('flying-from-input').value;
-    // console.log(getflyingFromAddress);
     let getDisplayFlyingForm = document.getElementById('flying_from');
     getDisplayFlyingForm.innerText = getflyingFromAddress;
     let getFlyingToAdress = document.getElementById('flying-to-input').value;
@@ -60,6 +59,8 @@ function flyingform() {
 function noneAndBlockDisplay() {
     let mainSection = document.getElementById('main-sectionn');
     mainSection.style.display = 'none';
+    let afterbook = document.getElementById('after-book');
+    afterbook.style.display = 'block';
 }
 
 function total(taxAndSubtotal) {
@@ -79,12 +80,12 @@ function subtotal(id) {
     let getSubtotal = document.getElementById('subtotal');
     let firstClassTotalPrice = parseInt(document.getElementById('totalfirstclassPrice').innerText);
     let economyClassTotalPrice = parseInt(document.getElementById('totalEconnomyclassPrice').innerText);
-    if (id == 'first-class-increase' || 'second-class-increase') {
+    if (id == 'first-class-increase' || 'economy-class-increase') {
         let finalPrice = firstClassTotalPrice + economyClassTotalPrice;
         getSubtotal.innerText = finalPrice;
 
         return finalPrice;
-    } else if (id == 'first-item-decrease' || 'second-class-decrease') {
+    } else if (id == 'first-class-decrease' || 'economy-class-decrease') {
         let finalPrice = firstClassTotalPrice - (-economyClassTotalPrice);
         getSubtotal.innerText = finalPrice;
         return finalPrice;
@@ -100,18 +101,18 @@ function TotalPriceCount(id) {
         let sum = firstClassPrice + 150;
         firstClass.innerText = sum;
         return sum;
-    } else if (id == 'second-class-increase') {
+    } else if (id == 'economy-class-increase') {
         let sum = economyClassPrice + 100;
         economyClass.innerText = sum;
         return sum;
-    } else if (id == 'first-item-decrease') {
+    } else if (id == 'first-class-decrease') {
         if (firstClassPrice > 0) {
             let sum = firstClassPrice - 150;
             firstClass.innerText = sum;
         } else if (firstClassPrice <= 0) {
             firstClass.innerText = 0;
         }
-    } else if (id == 'second-class-decrease') {
+    } else if (id == 'economy-class-decrease') {
         if (economyClassPrice > 0) {
             let sum = economyClassPrice - 100;
             economyClass.innerText = sum;
